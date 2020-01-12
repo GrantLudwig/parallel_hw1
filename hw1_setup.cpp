@@ -28,13 +28,21 @@ void prefixSums(int *data, int length) {
 }
 
 int main() {
-	int length = 1000 * 1000;
+	//int length = 1000 * 1000;
+	int length = 10;
 
 	// make array
 	int *data = new int[length];
 	for (int i = 1; i < length; i++)
 		data[i] = 1;
 	data[0] = 6;
+
+	//
+	cout << "Data Before" << endl;
+	for (int i = 0; i < length; i++)
+		cout << data[i] << " ";
+	cout << endl;
+	//
 
 	// transform array into converted/deconverted prefix sum of original
 	prefixSums(data, length);
@@ -43,6 +51,13 @@ int main() {
 	cout << "[0]: " << data[0] << endl
 			<< "[" << length/2 << "]: " << data[length/2] << endl 
 			<< "[end]: " << data[length-1] << endl; 
+
+	//
+	cout << endl << "Data After" << endl;
+	for (int i = 0; i < length; i++)
+		cout << data[i] << " ";
+	cout << endl;
+	//
 
     delete[] data;
 	return 0;
